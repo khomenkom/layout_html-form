@@ -11,18 +11,18 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <script type="text/javascript" src="./main.js"></script>
     <form
-    action="https://mate-academy-form-lesson.herokuapp.com/create-application"
-    method="post"
-    class = "form">
-      <fieldset class ="form__field">
+      class="form"
+      method="post"
+      action="https://mate-academy-form-lesson.herokuapp.com/create-application"
+    >
+      <fieldset class="form__field">
         <legend>Personal information</legend>
         <label class="label">
           Surname:
           <input
             type="text"
-            name="Surname"
+            name="surnameInput"
             autocomplete="off"
           >
         </label>
@@ -30,7 +30,7 @@
           Name:
           <input
             type="text"
-            name="Name"
+            name="nameInput"
             autocomplete="off"
           >
         </label>
@@ -38,7 +38,7 @@
           How old are You?
           <input
             type="number"
-            name="age"
+            name="ageInput"
             value="12"
             min="1"
             max="100"
@@ -46,19 +46,27 @@
         </label>
         <label class="label">
           Full date of birth:
-          <input type="date">
+          <input
+            type="date"
+            name="birthDate">
         </label>
-        <label class="label">
+        <label
+          class="label"
+          name="termAgreement">
           I accept the term of the agreement
-          <input type="checkbox">
+          <input
+           type="checkbox"
+           required
+          >
         </label>
       </fieldset>
-      <fieldset class ="form__field">
+      <fieldset class="form__field">
         <legend>Registration</legend>
         <label class="label">
           E-mail:
           <input
             type="email"
+            name="emailInput"
             placeholder="email@example.com"
             required
           >
@@ -67,60 +75,73 @@
           Password:
           <input
             type="password"
+            name="passwordInput"
             required
             minlength="7"
             maxlength="11"
           >
         </label>
       </fieldset>
-      <fieldset class ="form__field">
+      <fieldset class="form__field">
         <legend>An interesting fact about you!</legend>
-        <label>
+        <label class="label">
           Do you love cats?
           <input
             type="radio"
-            name="cat_love"
+            name="catLove"
             value="yes"
-            id="yes"
+            id="choice1"
           >
-          <label for="yes">Yes</label>
+          <label for="choice1">Yes</label>
           <input
             type="radio"
-            name="cat_love"
+            name="catLove"
             value="no"
-            id="no"
+            id="choice2"
           >
-          <label for="no">No</label>
+          <label for="choice2">No</label>
         </label>
         <label class="label">
           What is your favorite color?
-          <input type="color">
+          <input
+            type="color"
+            name ="favouriteColor"
+          >
         </label>
         <label class="label">
           What time do you go to bed?
-          <input type="time">
+          <input
+            type="time"
+            name="bedTime"
+          >
         </label>
         <label class="label">
           What are your favorite brand of cars?
-          <select name="FavouriteCar" multiple>
+          <select
+            name="favouriteCar"
+            multiple
+          >
             <option value="bmw">BMW</option>
             <option value="Audi">Audi</option>
             <option value="lada">Lada</option>
-            <option value=" "></option>
           </select>
         </label>
         <label class="label">
           How do you rate our work?
-          <input type="range">
+          <input
+            type="range"
+            name="workRange"
+            value="0"
+          >
         </label>
       </fieldset>
-      <fieldset class ="form__field">
+      <fieldset class="form__field">
         <legend>Additional info:</legend>
         <label class="label">
           Comments:
           <textarea
             name="comment"
-            cols="17"
+            cols="15"
             rows="2">
           </textarea>
         </label>
@@ -134,6 +155,7 @@
       </fieldset>
       <button type="submit">Submit</button>
     </form>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
 
 </html>
